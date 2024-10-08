@@ -1,0 +1,21 @@
+- basic of chord dht
+    - distributed hasd tables
+    - peer 2 peer network
+    - successor pointer
+    - finger tables
+
+- NODE
+    - represent the peer/node in the network
+
+- successor & predecessor
+    - pointers for successor & predecessor nodes in the network
+
+- Finger table
+    -
+
+- Data Storage
+    -
+
+- Handling Fault Tolerance and Node Failuer
+    -
+
