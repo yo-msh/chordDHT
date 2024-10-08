@@ -1,21 +1,47 @@
 - basic of chord dht
-    - distributed hasd tables
+    - distributed hash tables
+        - distributed system
+            - in a distributed system, data is spread across multiple nodes (computers) instead of being stored in one place. this makes the system more resilient to failures and scalable as we add more nodes.
+        - hash table
+            - basic stucture of it, the hash table, hash function and the hash collisions
+        - dsitributed hash table (dht)
+            - distributing data/keys across node with help of hash table
+    - consistant hashing
+        - should be able to handle when multile nodes joins/ leaves
+    - hash ring
+        - consistant hashing organizes nodes and keys in a ring structure.
+        - both nodes and keys are assgined unique ids in a circular, modulo space, 2^m
+    - node responsibility
+        - each node is responsible for a section of the ring. a node handles keys that fall between its own ID and the ID of its predecessor.
+    - node joins and leaves
+        - joining
+            - when a new node joins, it takes over some keys from its successor, minimizing data transfer.
+        - leaving
+            - when a node leaves, it transfers its keys to its successor, keeping the ring balanced.
+
     - peer 2 peer network
     - successor pointer
     - finger tables
 
 - NODE
     - represent the peer/node in the network
+    - structure
+        - id
+        - pointer to successor & predecessor
+        - finger table
 
 - successor & predecessor
     - pointers for successor & predecessor nodes in the network
 
 - Finger table
-    -
+    - able contains entries that allow the node to jump over sections of the ring, reducing the time needed to find keys from O(N) to O(log N)
 
 - Data Storage
-    -
+    - nodes will store data associated with keys they are responsible for. using consistent hashing, we can quickly locate the node responsible for any given key.
 
 - Handling Fault Tolerance and Node Failuer
     -
+
+
+-
 
